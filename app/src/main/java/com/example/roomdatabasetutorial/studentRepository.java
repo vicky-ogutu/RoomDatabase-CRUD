@@ -12,15 +12,13 @@ public class studentRepository {
     private studentDao _studentDao;
     private LiveData<List<student>> _AllStudents;
 
-        studentRepository(Application application){
+         studentRepository(Application application){
 
-        studentRoomDatabase db = studentRoomDatabase.getDatabase(application);
+         studentRoomDatabase db = studentRoomDatabase.getDatabase(application);
         _studentDao = db._studentDao();
         _AllStudents =_studentDao.getAllStudents();
     }
-    //LiveData<List<student>> getAllStudents() {
-      //  return _AllStudents;
-    //}
+
 
     public void insert(student _student){
         new insertAyncTask(_studentDao).execute(_student);
@@ -107,8 +105,4 @@ public class studentRepository {
             return null;
         }
     }
-
-
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.roomdatabasetutorial;
+ package com.example.roomdatabasetutorial;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +45,10 @@ public class studentAdapter extends RecyclerView.Adapter<studentAdapter.studentV
         notifyDataSetChanged();
 
     }
+    public student getStudentAt(int position){
+        return _students.get(position);
+    }
+
 
     class studentViewHolder extends RecyclerView.ViewHolder{
                TextView id, First_Name, Last_Name;
@@ -57,6 +61,5 @@ public class studentAdapter extends RecyclerView.Adapter<studentAdapter.studentV
 
         }
     }
-
 
 }

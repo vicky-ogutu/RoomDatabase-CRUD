@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 public class studentViewmodel extends AndroidViewModel {
+
     private studentRepository _studentRepository;
     LiveData<List<student>> _AllStudents;
 
@@ -19,9 +20,7 @@ public class studentViewmodel extends AndroidViewModel {
     }
 
 
-    LiveData<List<student>> getAllWords() {
-        return _AllStudents;
-    }
+
 
     public void insert(student _student) {
         _studentRepository.insert(_student);
@@ -37,6 +36,8 @@ public class studentViewmodel extends AndroidViewModel {
     public void deleteAll() {
         _studentRepository.deleteAllStudents();
     }
+
+
 
     public LiveData<List<student>> get_AllStudents(){
         return _AllStudents;
